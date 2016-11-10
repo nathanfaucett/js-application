@@ -1,0 +1,41 @@
+{
+  "name": "@nathanfaucett/application",
+  "version": "0.0.1",
+  "description": "base application class",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanfaucett/js-application.git"
+  },
+  "main": "src/index.js",
+  "keywords": [
+    "application",
+    "application.js"
+  ],
+  "scripts": {
+    "test": "npm run test-node",
+    "test-node": "node ./test | ./node_modules/.bin/tap-spec",
+    "test-node-raw": "node ./test",
+    "test-browser-local": "zuul --local 9999 --ui tape -- ./test"
+  },
+  "author": "Nathan Faucett",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "@nathanfaucett/task": "^0.0.7",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.3",
+    "tap-spec": "^4.1.0",
+    "tape": "^4.2.0",
+    "zuul": "^3.11.0"
+  },
+  "dependencies": {
+    "@nathanfaucett/class": "git://github.com/nathanfaucett/js-class.git",
+    "@nathanfaucett/assets": "git://github.com/nathanfaucett/js-assets.git",
+    "@nathanfaucett/scene_graph": "git://github.com/nathanfaucett/js-scene_graph.git",
+    "@nathanfaucett/is_string": "0.0.1",
+    "@nathanfaucett/is_number": "0.0.1",
+    "@nathanfaucett/index_of": "0.0.1",
+    "@nathanfaucett/create_loop": "0.0.1"
+  }
+}
