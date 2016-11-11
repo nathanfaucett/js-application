@@ -51,10 +51,9 @@ ApplicationPrototype.destructor = function() {
 
     while (i++ < il) {
         scene = scenes[i];
-        scene.destructor();
         delete sceneHash[scene.name];
-        scenes.splice(i, 1);
     }
+    scenes.length = 0;
 
     this.assets.destructor();
     this._loop.pause();
@@ -117,9 +116,9 @@ ApplicationPrototype.createScene = function(scene) {
     }
 
     if (sceneHash[scene.name]) {
-        newScene = Class.fromJSON(scene);
-
+        newScene = Scene.create();
         newScene.application = this;
+        newScene.fromJSON(scene);
         newScene.init();
 
         this.emit("createScene", newScene);
