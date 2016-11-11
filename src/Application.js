@@ -70,8 +70,15 @@ ApplicationPrototype.setElement = function(element) {
 
 ApplicationPrototype.init = function() {
 
-    this._loop.run();
     this.emit("init");
+
+    return this;
+};
+
+ApplicationPrototype.run = function() {
+
+    this._loop.run();
+    this.emit("run");
 
     return this;
 };

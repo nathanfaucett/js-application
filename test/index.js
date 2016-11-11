@@ -32,6 +32,7 @@ tape("Application", function(assert) {
     application.scene = application.createScene("scene");
 
     application.init();
+    application.run();
 
     application.on("pause", function() {
         assert.equals(loopCalled, true);
