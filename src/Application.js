@@ -126,13 +126,14 @@ ApplicationPrototype.createScene = function(scene) {
         newScene = Scene.create();
         newScene.application = this;
         newScene.fromJSON(scene);
-        newScene.init();
 
         this.emit("createScene", newScene);
 
         return newScene;
     } else {
-        throw new Error("Application.createScene(scene) Scene could not be found in Application");
+        throw new Error(
+            "Application.createScene(scene) Scene could not be found in Application"
+        );
     }
 
     return null;
